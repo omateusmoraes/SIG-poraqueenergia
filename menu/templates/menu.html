@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Gestão da Empresa</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            position: relative; /* Adicionado */
+        }
+        .header {
+            background-color: #337ab7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            flex: 1 1 calc(33.333% - 20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card h2 {
+            color: #337ab7;
+            margin-bottom: 10px;
+        }
+        .card p {
+            flex: 1;
+            margin: 0;
+        }
+        .card button {
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .card button:hover {
+            background-color: #23527c;
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Área de Gestão da Empresa</h1>
+        <button class="back-button" onclick="window.location.href='http://127.0.0.1:8000/'">Voltar ao Site</button> <!-- Substitua URL_DO_SEU_SITE pela URL do seu site -->
+    </div>
+    <div class="container">
+        <div class="card" id="cadastro-clientes">
+            <h2>Cadastro de Clientes</h2>
+            <p>Gerencie os dados dos seus clientes de forma eficiente.</p>
+            <button onclick="location.href='{% url 'clientes' %}'">Ver Mais</button>
+        </div>
+        <div class="card" id="agendamento-servicos">
+            <h2>Agendamento de Serviços</h2>
+            <p>Organize e agende serviços de maneira prática.</p>
+            <button onclick="location.href='{% url 'agendamentos' %}'">Ver Mais</button>
+        </div>
+        <div class="card" id="faturamento">
+            <h2>Faturamento da Empresa</h2>
+            <p>Controle o faturamento da Sua Empresa.</p>
+            <button onclick="location.href='{% url 'faturamento' %}'">Ver Mais</button>
+        </div>
+        <div class="card" id="gestao-estoque">
+            <h2>Gestão de Estoque</h2>
+            <p>Controle e monitore o estoque da sua empresa.</p>
+            <button onclick="location.href='{% url 'estoque' %}'">Ver Mais</button>
+        </div>
+        <div class="card" id="contasapagar-pagamentos">
+            <h2>Contas a pagar</h2>
+            <p>Gerencie pagamentos de Contas.</p>
+            <button onclick="location.href='{% url 'contasapagar' %}'">Ver Mais</button>
+        </div>
+        <div class="card" id="relatorios-analises">
+            <h2>Relatórios e Análises</h2>
+            <p>Obtenha insights e tome decisões informadas.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="gestao-usuarios">
+            <h2>Gestão de Usuários</h2>
+            <p>Administre os usuários e suas permissões.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="historico-servicos">
+            <h2>Histórico de Serviços</h2>
+            <p>Consulte o histórico de serviços realizados.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="modulo-treinamento">
+            <h2>Módulo de Treinamento</h2>
+            <p>Disponibilize treinamentos e capacitações.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="sistema-feedback">
+            <h2>Sistema de Feedback</h2>
+            <p>Receba e gerencie feedbacks dos clientes.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="chat-tempo-real">
+            <h2>Chat em Tempo Real</h2>
+            <p>Comunique-se em tempo real com os clientes.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="modulo-orcamentos">
+            <h2>Módulo de Orçamentos</h2>
+            <p>Crie e gerencie orçamentos rapidamente.</p>
+            <button>Ver Mais</button>
+        </div>
+        <div class="card" id="notificacoes-alertas">
+            <h2>Notificações e Alertas</h2>
+            <p>Receba notificações e alertas importantes.</p>
+            <button>Ver Mais</button>
+        </div>
+    </div>
+</body>
+</html>

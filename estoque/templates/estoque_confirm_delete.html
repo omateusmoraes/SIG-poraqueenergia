@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Exclusão</title>
+  <style>
+    /* Estilos para o template azul */
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      background-color: #337ab7;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .form-container {
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    .form-container h2 {
+      margin-top: 0;
+      color: #337ab7;
+    }
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .form-container input, .form-container select {
+      width: calc(100% - 22px);
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .form-container button {
+      background-image: linear-gradient(to bottom, #337ab7, #23527c);
+      background-color: #337ab7;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .form-container button:hover {
+      background-image: linear-gradient(to bottom, #23527c, #337ab7);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Excluir Item</h1>
+    </div>
+    <p>Tem certeza que deseja excluir o item "{{ item.quantidade }}" unidade "{{ item.unidade }}"  "{{ item.valor_unitario }}" às "{{ item.valor_total }}"?</p>
+    <div class="button-container">
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Exclusão</button>
+      </form>
+      <button onclick="window.history.back()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+
